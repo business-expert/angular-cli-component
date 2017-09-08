@@ -1,0 +1,47 @@
+<form #loginForm="ngForm" (ngSubmit)="!loginForm.valid || login()" fxLayout fxLayout.xs="column" fxLayoutAlign="center" class="container">
+
+  <md-panel title="Login" [progress]="progress" fxFlex.gt-xs="400px">
+
+    <md-card-content>
+
+      <div>
+
+        <error-list [errors]="errors"></error-list>
+
+        <md-input-container class="login-field">
+
+          <input #emailControl="ngModel" mdInput [(ngModel)]="email" name="email" placeholder="Email" required maxlength="25" [disabled]="progress" [errorStateMatcher]="errorStateMatcher">
+
+          <md-error>{{ getErrorMessage(emailControl) }}</md-error>
+
+        </md-input-container>
+
+        <md-input-container class="login-field">
+
+          <input #passwordControl="ngModel" mdInput [(ngModel)]="password" name="password" type="password" placeholder="Password" required [disabled]="progress" [errorStateMatcher]="errorStateMatcher">
+
+          <md-error>{{ getErrorMessage(passwordControl) }}</md-error>
+
+        </md-input-container>
+
+        <section class="remember-me">
+
+          <md-slide-toggle [disabled]="progress" color="primary" [(ngModel)]="remember" name="remember">
+            Remember Me
+          </md-slide-toggle>
+
+        </section>
+        
+      </div>
+
+    </md-card-content>
+
+    <md-card-actions align="end">
+
+      <button md-raised-button [disabled]="!loginForm.valid || progress" color="primary">Login</button>
+
+    </md-card-actions>
+
+  </md-panel>
+
+</form>

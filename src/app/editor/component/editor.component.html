@@ -1,0 +1,304 @@
+<div fxLayout="column" class="tab-container">
+  <md-toolbar>
+    <button md-button><md-icon>home</md-icon></button>
+    <button md-button></button>
+    <button md-button></button>
+  </md-toolbar>
+  <div fxLayout="row">
+    <table class="editor-detail">
+      <colgroup>
+        <col width="30%" />
+        <col width="10%" />
+        <col width="60%" />
+      </colgroup>
+      <tr>
+        <td>PropertyID</td>
+        <td>CLLI</td>
+        <td>Address</td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td>
+          <div fxLayout="row">
+            <div class="sched-change-reason-container">
+              <div style="text-align: right;">Sched Change Reason:</div>
+              <md-select  placeholder="Sched Change Reason" class="md-topnav-background" style="width: 100%" >
+                <!--<md-option ng-repeat="let color in colours" [Value]="color.id">{{color.name}}</md-option>-->
+              </md-select>
+            </div>
+            <div class="save-apply-container">
+              <div>Save Applies To...</div>
+              <md-select placeholder="Save Applies To..." class="md-topnav-background" ng-model="ddlApplies" style="width: 100%" >
+                <!--<md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>-->
+              </md-select>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <table width="100%" class="editor-detail">
+            <colgroup>
+              <col width="5%" />
+              <col width="20%" />
+              <col width="5%" />
+              <col width="5%" />
+              <col width="15%" />
+              <col width="50%" />
+            </colgroup>
+            <tr>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container">
+                    <div style="text-align: left;">Rt:</div>
+                      <md-checkbox ng-model="isChecked"></md-checkbox>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-2">
+                    <div style="text-align: left;">Block Lot =/Planning ID:</div>
+                    <input #systemNoteControl="ngModel" mdInput [(ngModel)]="planningID" name="planningID" placeholder="Block Lot =/Planning ID">
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container">
+                    <div style="text-align: right;">Res:</div>
+                    <md-checkbox ng-model="isChecked"></md-checkbox>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container">
+                    <div style="text-align: right;">Bus:</div>
+                    <md-checkbox ng-model="isChecked"></md-checkbox>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-2">
+                    <div style="text-align: left;">MDU Use:</div>
+                    <md-select placeholder="MDU Use" class="md-topnav-background"  ng-model="ddlMduBus">
+                      <!--<md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>-->
+                    </md-select>
+                    <!--<select style="width: 100%" id="ddlMduBus"></select>-->
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-2">
+                    <div style="text-align: left;">Expected Network Create Year/Month/Week:</div>
+                    <md-select placeholder="Year" class="md-topnav-background" ng-model="ddlYear" style="width: 33%" >
+                      <!--<md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>-->
+                    </md-select>
+                    <md-select placeholder="Month" class="md-topnav-background" ng-model="ddlMonth" style="width: 30%" >
+                      <!--<md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>-->
+                    </md-select>
+                    <md-select placeholder="Week" class="md-topnav-background" ng-model="ddlDate" style="width: 34%" >
+                      <!--<md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>-->
+                    </md-select>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <table width="100%" class="editor-detail">
+            <colgroup>
+              <col width="15%" />
+              <col width="15%" />
+              <col width="15%" />
+              <col width="15%" />
+              <col width="15%" />
+              <col width="25%" />
+            </colgroup>
+            <tr>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-2">
+                    <div style="text-align: left;">Special ID:</div>
+                    <!--<input type="text" width="100%" />-->
+                    <input #systemNoteControl="ngModel" mdInput [(ngModel)]="SpecialID" name="SpecialID" placeholder="Special #">
+                    <!--<md-input-container md-no-float class="md-topnav-background">
+                      <input placeholder="Address 2">
+                    </md-input-container>-->
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-2">
+                    <div style="text-align: left;">Work Type:</div>
+                    <md-select placeholder="Work Type" class="md-topnav-background" ng-model="ddlWorkType" style="width: 34%" >
+                      <!--<md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>-->
+                    </md-select>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-3">
+                    <div style="text-align: left;">Sub Address:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-3">
+                    <div style="text-align: left;">Doc Status:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-3">
+                    <div style="text-align: left;">Est s/LU:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-3">
+                    <div style="text-align: left;">Mkt Prty:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <table width="100%" class="editor-detail">
+            <colgroup>
+              <col width="15%" />
+              <col width="15%" />
+              <col width="15%" />
+              <col width="15%" />
+              <col width="15%" />
+              <col width="25%" />
+            </colgroup>
+            <tr>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-2">
+                    <div style="text-align: left;">VZ Block:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-2">
+                    <div style="text-align: left;">SFU:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-3">
+                    <div style="text-align: left;">Associated:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-3">
+                    <div style="text-align: left;">IVAPP Valid:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-3">
+                    <div style="text-align: left;">Engineer:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-3">
+                    <div style="text-align: left;">Adl Row Reqd:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <table width="100%" class="editor-detail">
+            <colgroup>
+              <col width="20%" />
+              <col width="20%" />
+              <col width="20%" />
+              <col width="20%" />
+              <col width="20%" />
+            </colgroup>
+            <tr>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-2">
+                    <div style="text-align: left;">Mkt. Rating:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-2">
+                    <div style="text-align: left;">Assoc. in ICGS:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-3">
+                    <div style="text-align: left;">Fiber/Hub Req Dt:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-container-3">
+                    <div style="text-align: left;">Fiber/Hub Status:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div fxlayout="row">
+                  <div class="sched-change-reason-3">
+                    <div style="text-align: left;">Deployement Practice:</div>
+                    <label></label>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

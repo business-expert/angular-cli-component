@@ -1,0 +1,25 @@
+.editor-detail{
+    width: 100%;
+}
+.editor-detail .sched-change-reason-container, .editor-detail .save-apply-container{
+    padding: 4px;
+}
+.editor-detail .sched-change-reason-container{
+    width: 50%;
+}
+
+.editor-detail .save-apply-container{
+    width: 50%;
+}
+
+.editor-detail .sched-change-reason-container-2{
+    width: 90%;
+}
+
+.editor-detail .sched-change-reason-2{
+    width: 100%;
+}
+
+input{
+    border-bottom: 1px grey solid;
+}

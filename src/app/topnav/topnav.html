@@ -1,0 +1,96 @@
+<div class="mat-container-header">
+<table width="100%">
+  <tr>
+    <td>
+      <h1 class="mat-title route-header">{{ currentRouteName || 'Kultera' }}</h1>
+    </td>
+    <td nowrap>
+      <div class="md-topnav-float-right">
+        <table border="0">
+          <tr>
+            <td style="text-align: right;">
+              <div *ngIf='listMode'>
+                <input type="radio" name="find" value="optHotList" *ngIf='listMode' [(ngModel)]='optHotList'> Hot List
+                <input type="radio" name="find" value="optVideoList" *ngIf='listMode' [(ngModel)]='optVideoList'> Video List
+                <input type="radio" name="find" value="optLFARequired" *ngIf='listMode' [(ngModel)]='optLFARequired'> LFA Required
+                <input type="radio" name="find" value="optMTUMarketing" *ngIf='listMode' [(ngModel)]='optMTUMarketing'> MTU Marketing List
+              </div>
+            </td>
+            <td class="md-topnav-right">
+              <md-select placeholder="Find" class="md-topnav-background" *ngIf='findMode'>
+                <md-option *ngFor="let schedulerFind of schedulerFinds | async" [value]="schedulerFind.itemValue">{{ schedulerFind.itemDisplay }}</md-option>
+              </md-select>
+            </td>
+            <td class="md-topnav-left">
+              <md-select placeholder="Boro" class="md-topnav-background" *ngIf='listMode || filterMode'>
+                <md-option *ngFor="let boro of boros | async" [value]="boro.itemValue">{{ boro.itemDisplay }}</md-option>
+              </md-select>
+              <input mdInput placeholder="Find Address" [(ngModel)]='findAddress' class="md-topnav-background" *ngIf='findMode'>
+            </td>
+            <td class="md-topnav-left">
+              <md-select placeholder="Year" class="md-topnav-background" *ngIf='filterMode'>
+                <md-option *ngFor="let year of years | async" [value]="year.itemValue">{{ year.itemDisplay }}</md-option>
+              </md-select>
+            </td>
+            <td class="md-topnav-left">
+              <md-select placeholder="Tracker Type" class="md-topnav-background">
+                <md-option *ngFor="let trackerType of trackerTypes | async" [value]="trackerType.itemValue">{{ trackerType.itemDisplay }}</md-option>
+              </md-select>
+            </td>
+            <td class="md-topnav-left">
+              <md-select placeholder="Marketing Rating" class="md-topnav-background" *ngIf='filterMode'>
+                <md-option *ngFor="let mktgPropRating of mktgPropRatings | async" [value]="mktgPropRating.itemValue">{{ mktgPropRating.itemDisplay }}</md-option>
+              </md-select>
+            </td>
+            <td class="md-topnav-left">
+              <md-checkbox ng-model="isChecked" aria-label="MDU" *ngIf='filterMode'>MDU</md-checkbox>
+              <md-checkbox ng-model="isChecked" aria-label="Reviewed" *ngIf='filterMode'>Reviewed</md-checkbox>
+            </td>
+            <td>
+              <button id="hotlist-lnk" (click)='hotListClick()' md-button valign="top">{{hotlistTitle}}</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="md-topnav-left">
+            </td>
+            <td class="md-topnav-right">
+            </td>
+            <td class="md-topnav-left">
+              <md-select placeholder="CLLI" class="md-topnav-background" *ngIf='filterMode'>
+                <md-option *ngFor="let clli of cllis | async" [value]="clli.itemValue">{{ clli.itemDisplay }}</md-option>
+              </md-select>
+              <input mdInput placeholder="Find Clli" [(ngModel)]='findClli' class="md-topnav-background" *ngIf='findMode'>
+            </td>
+            <td class="md-topnav-left">
+              <md-select placeholder="Month" class="md-topnav-background" *ngIf='filterMode'>
+                <md-option *ngFor="let month of months | async" [value]="month.itemValue">{{ month.itemDisplay }}</md-option>
+              </md-select>
+            </td>
+            <td class="md-topnav-left">
+              <md-select placeholder="Status" class="md-topnav-background">
+                <md-option *ngFor="let status of statuses | async" [value]="status.itemValue">{{ status.itemDisplay }}</md-option>
+              </md-select>
+            </td>
+            <td class="md-topnav-left">
+              <md-select placeholder="Work Type" class="md-topnav-background" *ngIf='filterMode'>
+                <md-option *ngFor="let worktype of worktypes | async" [value]="worktype.itemValue">{{ worktype.itemDisplay }}</md-option>
+              </md-select>
+            </td>
+            <td class="md-topnav-left">
+              <md-checkbox ng-model="isChecked" aria-label="BMDU" *ngIf='filterMode'>BMDU</md-checkbox>
+              <md-checkbox ng-model="isChecked" aria-label="InqOnly" *ngIf='filterMode'>Inq. Only</md-checkbox>
+              <md-checkbox ng-model="isChecked" aria-label="JeopOnly" *ngIf='filterMode'>Jeop. Only</md-checkbox>
+            </td>
+            <td align="left" valign="top">
+              <button id="find-lnk" (click)='findClick()' md-button valign="middle">{{findTitle}}</button>
+              <button id="view-btn" (click)='view()' md-mini-fab valign="bottom" *ngIf='filterMode || listMode'>View</button>
+              <button id="find-btn" (click)='find()' md-mini-fab *ngIf='findMode'>Find</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+</div>
+

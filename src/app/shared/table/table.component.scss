@@ -1,0 +1,10 @@
+
+md-row {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+md-row:hover {
+    background: rgba(0,0,0,.04);
+}

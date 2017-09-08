@@ -1,0 +1,23 @@
+<md-card [class.has-title]="title != null">
+
+  <div *ngIf="progress" [class.has-title]="title != null" class="progress-overlay">
+  </div>
+
+  <md-card-header [class.mat-primary-bg]="title != null" [class.has-title]="title != null">
+
+    <md-card-title *ngIf="title != null" class="title">
+
+      <h1 class="title-header mat-title">{{ title }}</h1>
+
+    </md-card-title>
+
+    <md-progress-bar *ngIf="progress" mode="indeterminate" color="accent">
+    </md-progress-bar>
+
+  </md-card-header>
+
+  <ng-content>
+
+  </ng-content>
+
+</md-card>

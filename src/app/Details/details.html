@@ -1,0 +1,213 @@
+<table>
+    <tr>
+        <td>
+            <md-select placeholder="Start Staging" class="md-topnav-background">
+                <md-option *ngFor="let staging of stagings | async" [value]="staging.itemValue">{{ staging.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Internal Fiber Type" class="md-topnav-background">
+                <md-option *ngFor="let internalFiberType of internalFiberTypes | async" [value]="internalFiberType.itemValue">{{ internalFiberType.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Network Create Date</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Assoc Block ACD</md-checkbox>
+        </td>
+    </tr>
+    <tr>
+        <td>   
+            <input name="cable" placeholder="Cable">         
+        </td>
+        <td>
+        </td>
+        <td>
+            <md-input-container>
+                <input mdInput [mdDatepicker]="pickerNetworkCreateDate" placeholder="Network Create Date">
+                <button mdSuffix [mdDatepickerToggle]="pickerNetworkCreateDate"></button>
+            </md-input-container>
+            <md-datepicker #pickerNetworkCreateDate></md-datepicker>
+        </td>
+        <td>
+            <md-input-container>
+                <input mdInput [mdDatepicker]="pickerAssocBlockACD" placeholder="Block ACD Date">
+                <button mdSuffix [mdDatepickerToggle]="pickerAssocBlockACD"></button>
+            </md-input-container>
+            <md-datepicker #pickerAssocBlockACD></md-datepicker>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <md-input-container>
+                <input mdInput [mdDatepicker]="pickerLFAReqDate" placeholder="LFA Req Date">
+                <button mdSuffix [mdDatepickerToggle]="pickerLFAReqDate"></button>
+            </md-input-container>
+            <md-datepicker #pickerLFAReqDate></md-datepicker>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Engineering ASD</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Construction ECD</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Constuction ASD</md-checkbox>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            <md-input-container>
+                <input mdInput [mdDatepicker]="pickerEngASD" placeholder="Eng ASD Date">
+                <button mdSuffix [mdDatepickerToggle]="pickerEngASD"></button>
+            </md-input-container>
+            <md-datepicker #pickerEngASD></md-datepicker>
+        </td>
+        <td>
+            <md-input-container>
+                <input mdInput [mdDatepicker]="pickerConsECD" placeholder="Cons ECD Date">
+                <button mdSuffix [mdDatepickerToggle]="pickerConsECD"></button>
+            </md-input-container>
+            <md-datepicker #pickerConsECD></md-datepicker>
+        </td>
+        <td>
+            <md-input-container>
+                <input mdInput [mdDatepicker]="pickerConsASD" placeholder="Cons ASD Date">
+                <button mdSuffix [mdDatepickerToggle]="pickerConsASD"></button>
+            </md-input-container>
+            <md-datepicker #pickerConsASD></md-datepicker>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Engineering ACD</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Assoc Block EWO</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Constuction ACD</md-checkbox>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <md-checkbox ng-model="isChecked" >Needs Drops Placed</md-checkbox>
+        </td>
+        <td>
+              <md-input-container>
+                <input mdInput [mdDatepicker]="pickerEngACD" placeholder="Eng ACD Date">
+                <button mdSuffix [mdDatepickerToggle]="pickerEngACD"></button>
+            </md-input-container>
+            <md-datepicker #pickerEngACD></md-datepicker> 
+        </td>
+        <td>
+            <input name="cphDetails" placeholder="Cph Details">  
+        </td>
+        <td>
+             <md-input-container>
+                <input mdInput [mdDatepicker]="pickerConsACD" placeholder="Cons ACD Date">
+                <button mdSuffix [mdDatepickerToggle]="pickerConsACD"></button>
+            </md-input-container>
+            <md-datepicker #pickerConsACD></md-datepicker> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <md-checkbox ng-model="isChecked" >Assoc. Block Required</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Video Job</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Hot Job</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >BMDU Job</md-checkbox>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="usage"><strong>Inquiries</strong></div>
+        </td>
+        <td>
+            <div class="usage"><strong>Remaining Hours</strong></div>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >95% Confident</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" >Door Answering Service</md-checkbox>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <label>NSI: </label>
+                        <label>None</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Initial NSI: </label>
+                        <label>None</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>NSI2: </label>
+                        <label>None</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Initial NSI2: </label>
+                        <label>None</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>NSI-No Int: </label>
+                        <label>None</label>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td class="md-path-align-top">
+            <table>
+                <tr>
+                    <td>
+                        <label>Coil EWO: </label>
+                        <label></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Lateral EWO: </label>
+                        <label></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>CXM EWO: </label>
+                        <label></label>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+        <td>
+            <md-select placeholder="DAS" class="md-topnav-background">
+                <md-option *ngFor="let doorService of doorServices | async" [value]="doorService.itemValue">{{ doorService.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+    </tr>
+</table>

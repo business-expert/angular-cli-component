@@ -1,0 +1,35 @@
+<div [class.mat-elevation-z4]="elevate">
+
+  <md-table [dataSource]="dataSource" mdSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container *ngFor="let column of columns;" cdkColumnDef="{{column.field}}">
+      <md-header-cell *cdkHeaderCellDef md-sort-header>
+        {{ column.displayField || column.field }}
+      </md-header-cell>
+      <md-cell *cdkCellDef="let row">
+
+        <span *ngIf="columnReadonly(column)">{{ column.transform ? column.transform(row) : row[column.field] }}</span>
+
+        <md-checkbox *ngIf="columnCheckbox(column)" [(ngModel)]="row[column.field]" (ngModelChange)="onRowChanged(row)" [ngModelOptions]="{ standalone: true }"></md-checkbox>
+
+      </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="columnNames"></md-header-row>
+
+    <md-row *cdkRowDef="let row; columns: columnNames;" md-ripple (click)="onRowClicked(row)">
+    </md-row>
+
+    <md-row *ngIf="dataSource?.noData">
+      No data.
+    </md-row>
+
+  </md-table>
+
+  <md-paginator *ngIf="paginate" #paginator [pageIndex]="0" [pageSize]="25" [pageSizeOptions]="[5, 10, 25, 100]">
+  </md-paginator>
+
+</div>

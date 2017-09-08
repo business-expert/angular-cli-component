@@ -1,0 +1,40 @@
+<h2 md-dialog-title>Title</h2>
+
+<md-dialog-content>
+    <form #jeopardyForm="ngForm">
+        <error-list [errors]="errors"></error-list>
+
+        <md-select [(ngModel)]="jeopardy && jeopardy.jeopardyId" required placeholder="Jeopardy" name="jeopardy" class="md-topnav-background">
+            <md-option *ngFor="let jeopardyDescription of jeopardyDescriptions | async" [value]="jeopardyDescription.itemValue">{{ jeopardyDescription.itemDisplay }}</md-option>
+        </md-select>
+
+        <md-select [(ngModel)]="jeopardy && jeopardy.ownerId" required placeholder="Owner" name="owner" class="md-topnav-background">
+            <md-option *ngFor="let jeopardyOwner of jeopardyOwners | async" [value]="jeopardyOwner.itemValue">{{ jeopardyOwner.itemDisplay }}</md-option>
+        </md-select>
+
+        <md-input-container>
+
+            <input #systemNoteControl="ngModel" mdInput [(ngModel)]="jeopardy && jeopardy.systemNote" name="systemNote" placeholder="System Note"
+                required [disabled]="progress" [errorStateMatcher]="errorStateMatcher">
+
+            <md-error>{{ getErrorMessage(systemNoteControl) }}</md-error>
+
+        </md-input-container>
+    </form>
+
+</md-dialog-content>
+
+
+
+<md-dialog-actions align="end">
+
+    <div style="margin-right: auto;">
+
+        <button md-button color="accent" (click)="delete()">Delete</button>
+
+    </div>
+
+    <button md-button md-dialog-close >Cancel</button>
+    <button md-button [disabled]="jeopardyForm.pristine || !jeopardyForm.valid" (click)="save()">Save</button>
+
+</md-dialog-actions>

@@ -1,0 +1,122 @@
+<table>
+    <tr>
+        <td>
+            <md-checkbox ng-model="isChecked" aria-label="MDU">Path Create Required</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" aria-label="ASD">Path Create ASD</md-checkbox>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" aria-label="ACD">Path Create ACD</md-checkbox>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <md-select placeholder="Path Create Required" class="md-topnav-background">
+                            <md-option *ngFor="let pathCreateRequired of pathCreateRequireds | async" [value]="pathCreateRequired.itemValue">{{ pathCreateRequired.itemDisplay }}</md-option>
+                        </md-select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <md-input-container>
+                <input mdInput [mdDatepicker]="pickerAsd" placeholder="Choose a date">
+                <button mdSuffix [mdDatepickerToggle]="pickerAsd"></button>
+            </md-input-container>
+            <md-datepicker #pickerAsd></md-datepicker>
+        </td>
+        <td>
+            <md-input-container>
+                <input mdInput [mdDatepicker]="pickerAcd" placeholder="Choose a date">
+                <button mdSuffix [mdDatepickerToggle]="pickerAcd"></button>
+            </md-input-container>
+            <md-datepicker #pickerAcd></md-datepicker>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <md-checkbox ng-model="isChecked" aria-label="JeopOnly">Path Create Method:</md-checkbox>
+        </td>
+        <td>
+            <md-select placeholder="Riser/Drill/Incidental Vendor" class="md-topnav-background">
+                <md-option *ngFor="let pathVendor of pathVendors | async" [value]="pathVendor.itemValue">{{ pathVendor.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-checkbox ng-model="isChecked" aria-label="JeopOnly">Deployment Practice:</md-checkbox>
+        </td>
+    </tr>
+    <tr>
+        <td class="md-path-align-top">
+            <md-select multiple="true" placeholder="Path Create Method" class="md-topnav-background">
+                <md-option *ngFor="let pathCreateMethod of pathCreateMethods | async" [value]="pathCreateMethod.itemValue">{{ pathCreateMethod.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <table>
+                
+                <tr>
+                    <td>
+                        <md-select placeholder="Riser/Drill/Incidental Status" class="md-topnav-background">
+                            <md-option *ngFor="let pathStatus of pathStatuses | async" [value]="pathStatus.itemValue">{{ pathStatus.itemDisplay }}</md-option>
+                        </md-select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-select placeholder="Molding Vendor" class="md-topnav-background">
+                            <md-option *ngFor="let pathMoldingVendor of pathMoldingVendors | async" [value]="pathMoldingVendor.itemValue">{{ pathMoldingVendor.itemDisplay }}</md-option>
+                        </md-select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-select placeholder="Molding Status" class="md-topnav-background">
+                            <md-option *ngFor="let pathMoldingStatus of pathMoldingStatuses | async" [value]="pathMoldingStatus.itemValue">{{ pathMoldingStatus.itemDisplay }}</md-option>
+                        </md-select>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td class="md-path-align-top">
+            <table>
+                <tr>
+                    <td>
+                        <md-select placeholder="Deployment Practice" class="md-topnav-background">
+                            <md-option *ngFor="let deploymentPractice of deploymentPractices | async" [value]="deploymentPractice.itemValue">{{ deploymentPractice.itemDisplay }}</md-option>
+                        </md-select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-checkbox ng-model="isChecked" aria-label="ACD">Bill Of Materials Issued</md-checkbox>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            BDMS CXM EWO / vBuild Status:
+            <br />
+            <Label ID="lblBDMSCXMEWO" Text="">This is the bdms build status</Label>
+        </td>
+        <td>
+            MMS EWO / vBuild Status:
+            <br />
+            <Label ID="lblMMSEWO" Text="">This is the mms build staus</Label>
+        </td>
+        <td>
+
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,76 @@
+<md-sidenav-container>
+
+  <md-sidenav [hidden]="!authorized" #sidenav mode="side" [opened]="sideNavOpened" (close-start)="toggleNavState(false)" (open-start)="toggleNavState(true)">
+
+    <md-nav-list>
+
+      <div class="md-nav-profile" fxLayout="column">
+
+        <div fxFlex="grow">
+          <md-icon class="md-account-icon">account_circle</md-icon>
+        </div>
+
+        <button *ngIf="authorized && account != null" md-button class="account-button">
+            {{ account.email }}
+            <md-icon style="float: right; margin-top: 6px;">settings</md-icon>
+        </button>
+
+      </div>
+
+      <md-divider></md-divider>
+
+      <h3 md-subheader>Navigation</h3>
+      <!-- All of the links regular users can see. -->
+      <md-list-item routerLink="home">
+        <a md-line>Home</a>
+      </md-list-item>
+
+    </md-nav-list>
+
+  </md-sidenav>
+
+  <section fxLayout="column" class="app-content">
+
+    <md-toolbar color="primary" class="mat-elevation-z6">
+
+      <button *ngIf="authorized" id="sidenav-toggle-btn" md-button (click)="sidenav?.toggle()">
+        <md-icon>menu</md-icon>
+      </button>
+
+      <span>{{ environment.appTitle }}</span>
+
+      <span class="spacer"></span>
+
+      <button md-icon-button>
+        <md-icon>help</md-icon>
+      </button>
+
+    </md-toolbar>
+
+    <div fxLayout="column" fxFlex="grow" class="sidenav-content">
+
+      <tn-topnav></tn-topnav>
+
+
+
+
+      <div fxFlex="grow">
+
+
+
+
+        <!-- primary content -->
+        <router-outlet>
+
+          
+
+        </router-outlet>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+</md-sidenav-container>

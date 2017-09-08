@@ -1,0 +1,140 @@
+<table style="margin-top: 1%">
+    <tr>
+        <td>
+            <input  name="jobNumber" placeholder="Job #">
+        </td>
+        <td>
+            <input  name="print" placeholder="Print">
+        </td>
+        <td>
+            <md-select placeholder="Parent Job">
+                <md-option *ngFor="let parentJob of parentJobs | async" [value]="parentJob.parentJobId">{{ parentJob.parentJob }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <label> vSap: </label>
+            <label></label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <md-select placeholder="Job Category">
+                <md-option *ngFor="let ecsClass of ecsClasses | async" [value]="ecsClass.itemValue">{{ ecsClass.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Job Type">
+                <md-option *ngFor="let ecsType of ecsTypes | async" [value]="ecsType.itemValue">{{ ecsType.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Job Status">
+                <md-option *ngFor="let jobStatus of jobStatuses | async" [value]="jobStatus.itemValue">{{ jobStatus.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <button id="save-lnk" (click)='saveClick()' md-button valign="middle">Save Job Info</button>
+        </td>
+    </tr>
+    <tr>
+
+        <td>
+            <md-select placeholder="Delete applies to...">
+                <md-option *ngFor="let jobDeleteOption of jobDeleteOptions | async" [value]="jobDeleteOption.itemValue">{{ jobDeleteOption.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <button id="delete-lnk" (click)='deleteClick()' md-button valign="middle">Delete Selected Job</button>
+        </td>
+    </tr>
+</table>
+
+<table style="margin-top: 1%">
+    <thead>Add Verizon Job</thead>
+    <tr style="border-bottom:1px solid black">
+        <td colspan="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <input #systemNoteControl="ngModel" mdInput [(ngModel)]="jobNumber" name="jobNumber" placeholder="Job #">
+        </td>
+        <td>
+            <input #systemNoteControl="ngModel" mdInput [(ngModel)]="print" name="print" placeholder="Print">
+        </td>
+        <td>
+            <md-select placeholder="Job Category">
+                <md-option *ngFor="let ecsClass of ecsClasses | async" [value]="ecsClass.itemValue">{{ ecsClass.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Job Type">
+                <md-option *ngFor="let ecsType of ecsTypes | async" [value]="ecsType.itemValue">{{ ecsType.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <md-select placeholder="Job Status">
+                <md-option *ngFor="let jobStatus of jobStatuses | async" [value]="jobStatus.itemValue">{{ jobStatus.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Parent Job">
+                <md-option *ngFor="let parentJob of parentJobs | async" [value]="parentJob.parentJobId">{{ parentJob.parentJob }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Add applies to...">
+                <md-option *ngFor="let jobDeleteOption of jobDeleteOptions | async" [value]="jobDeleteOption.itemValue">{{ jobDeleteOption.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <button id="save-lnk" (click)='saveClick()' md-button valign="middle">Add</button>
+        </td>
+    </tr>
+</table>
+
+<table style="margin-top: 1%">
+    <thead>Add ECS Job</thead>
+    <tr style="border-bottom:1px solid black">
+        <td colspan="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <input #systemNoteControl="ngModel" mdInput [(ngModel)]="jobNumber" name="jobNumber" placeholder="Job #">
+        </td>
+        <td>
+            <input #systemNoteControl="ngModel" mdInput [(ngModel)]="print" name="print" placeholder="Print">
+        </td>
+        <td>
+            <md-select placeholder="Job Category">
+                <md-option *ngFor="let ecsClass of ecsClasses | async" [value]="ecsClass.itemValue">{{ ecsClass.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Job Type">
+                <md-option *ngFor="let ecsType of ecsTypes | async" [value]="ecsType.itemValue">{{ ecsType.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <md-select placeholder="Job Status">
+                <md-option *ngFor="let jobStatus of jobStatuses | async" [value]="jobStatus.itemValue">{{ jobStatus.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Parent Job">
+                <md-option *ngFor="let parentJob of parentJobs | async" [value]="parentJob.parentJobId">{{ parentJob.parentJob }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <md-select placeholder="Add applies to...">
+                <md-option *ngFor="let jobDeleteOption of jobDeleteOptions | async" [value]="jobDeleteOption.itemValue">{{ jobDeleteOption.itemDisplay }}</md-option>
+            </md-select>
+        </td>
+        <td>
+            <button id="save-lnk" (click)='saveClick()' md-button valign="middle">Add</button>
+        </td>
+    </tr>
+</table>
